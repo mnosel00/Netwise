@@ -34,12 +34,12 @@ namespace Netwise.Infrastructure.Files
             }
             catch (IOException ex)
             {
-                _logger.LogError(ex, "I/O error {file}", file);
+                _logger.LogError(ex, "I/O error");
                 throw;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "File error: {file}", file);
+                _logger.LogError(ex, "File error");
                 throw;
             }
             
