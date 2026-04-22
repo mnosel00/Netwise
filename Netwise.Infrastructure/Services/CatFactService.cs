@@ -25,7 +25,8 @@ namespace Netwise.Infrastructure.Services
             Console.WriteLine($"Fact: {fact.Fact}");
             Console.WriteLine($"Length: {fact.Length}");
 
-            await _fileCreater.CreateContent(file, fact.Fact, cancellationToken);
+            await _fileCreater.CreateContent(file, $"{fact.Fact} | Length: {fact.Length}", cancellationToken);
+
         }
     }
 }

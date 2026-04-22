@@ -13,7 +13,7 @@ namespace Netwise.Infrastructure.Files
         {
             var path = Path.GetDirectoryName(file);
 
-            await using var stream = File.Create(file);
+            await using var stream = new FileStream(file, FileMode.Append);
             await using var writer = new StreamWriter(stream);
             await writer.WriteLineAsync(content);
             await writer.FlushAsync(cancellationToken);
