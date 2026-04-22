@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Netwise.ConsoleApp/Netwise.ConsoleApp.csproj" />
+  <Project Path="Netwise.Domain/Netwise.Domain.csproj" />
+  <Project Path="Netwise.Infrastructure/Netwise.Infrastructure.csproj" />
+</Solution>
