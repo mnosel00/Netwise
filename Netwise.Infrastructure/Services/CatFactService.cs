@@ -1,11 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Netwise.Domain.Interfaces.CatFact;
 using Netwise.Domain.Interfaces.Files;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Netwise.Infrastructure.Services
 {
@@ -43,8 +38,6 @@ namespace Netwise.Infrastructure.Services
             {
                 _logger.LogError(ex, "Error adding data to .txt");
             }
-
-
         }
     }
 }

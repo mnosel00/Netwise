@@ -1,12 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Netwise.Domain.Interfaces.CatFact;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Netwise.ConsoleApp
 {
@@ -26,12 +20,10 @@ namespace Netwise.ConsoleApp
             try
             {
                 await _catFactService.StartAsync("catfacts.txt", stoppingToken);
-
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while executing the cat fact service.");
-                
             }
         }
     }

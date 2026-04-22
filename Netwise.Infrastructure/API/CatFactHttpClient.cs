@@ -2,13 +2,7 @@
 using Netwise.Domain.Interfaces.CatFact;
 using Netwise.Domain.Models.CatFact;
 using Netwise.Infrastructure.API.Dto;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace Netwise.Infrastructure.API
 {
@@ -67,7 +61,6 @@ namespace Netwise.Infrastructure.API
                 _logger.LogError(ex, "Unexpected error.");
                 return null;
             }
-
         }
     }
 }
