@@ -16,4 +16,7 @@ var host = Host.CreateDefaultBuilder(args).ConfigureServices((context,services)=
 })
     .Build();
 
-await host.RunAsync();
+var service = host.Services.GetRequiredService<ICatFactService>();
+await service.StartAsync("catfacts.txt");
+
+Console.WriteLine("Done.");

@@ -16,10 +16,11 @@ namespace Netwise.Infrastructure.Services
             _catFactClient = catFactClient;
         }
 
-        public Task StartAsync(string file, CancellationToken cancellationToken = default)
+        public async Task StartAsync(string file, CancellationToken cancellationToken = default)
         {
-            var fact = _catFactClient.GetFactAsync(cancellationToken); 
-            return Task.CompletedTask;
+            var fact = await _catFactClient.GetFactAsync(cancellationToken);
+            Console.WriteLine($"Fact: {fact.Fact}");
+            Console.WriteLine($"Length: {fact.Length}");
         }
     }
 }
