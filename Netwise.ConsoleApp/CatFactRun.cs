@@ -17,14 +17,26 @@ namespace Netwise.ConsoleApp
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            try
+            while (!stoppingToken.IsCancellationRequested)
             {
-                await _catFactService.StartAsync("catfacts.txt", stoppingToken);
+                try
+                {
+                    await _catFactService.StartAsync("catfacts.txt", stoppingToken);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "An error occurred while executing the cat fact service.");
+                }
+                                
+                Console.WriteLine("Enter - continue , q - quit");
+
+                var input = Console.ReadLine();
+                if (string.Equals(input?.Trim(), "q", StringComparison.OrdinalIgnoreCase))
+                {
+                    break;
+                }
             }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "An error occurred while executing the cat fact service.");
-            }
+            
         }
     }
 }
